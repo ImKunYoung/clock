@@ -96,21 +96,31 @@ mainloop()
 - ``win.attributes("-topmost", 1)``: 윈도우를 최상위로 설정합니다.
 - ``win.overrideredirect(1)``: 윈도우의 테두리를 없앱니다.
 
+<br/>
+
 - ``def time():``: 시간을 표시하는 함수입니다.
 - ``strftime('%H:%M:%S %p')``: 현재 시간을 문자열로 반환합니다.
 - ``label.config(text=string)``: 라벨의 텍스트를 설정합니다.
 - ``label.after(1000, time)``: 1초 후에 ``time()`` 함수를 실행합니다.
 
+<br/>
+
 - ``Label(win, font=("ds-digital", 10), background="black", foreground="white")``: 라벨을 생성합니다. ``win``은 라벨이 위치할 윈도우를 지정합니다. ``font``는 라벨의 폰트를 지정합니다. ``background``는 라벨의 배경색을 지정합니다. ``foreground``는 라벨의 글자색을 지정합니다.
+
+<br/>
 
 - ``def drag_start(event):``: 윈도우를 드래그하기 위한 함수입니다.
 - ``win.x = event.x``: 윈도우의 x좌표를 저장합니다.
 - ``win.y = event.y``: 윈도우의 y좌표를 저장합니다.
 
+<br/>
+
 - ``def drag_motion(event):``: 마우스를 드래그할 때 윈도우의 위치를 변경하기 위한 함수입니다.
 - ``x = (event.x_root - win.x - win.winfo_rootx() + win.winfo_rootx())``: 윈도우의 x좌표를 계산합니다.
 - ``y = (event.y_root - win.y - win.winfo_rooty() + win.winfo_rooty())``: 윈도우의 y좌표를 계산합니다.
 - ``win.geometry("+%s+%s" % (x, y))``: 윈도우의 위치를 변경합니다.
+
+<br/>
 
 - ``def change_color(event):``: 라벨의 색을 변경하는 함수입니다.
 - ``if label.cget("foreground") == "white":``: 라벨의 글자색이 흰색이면
@@ -123,6 +133,8 @@ mainloop()
 - ``label.bind("<B1-Motion>", drag_motion)``: 라벨을 드래그할 때 ``drag_motion()`` 함수를 실행합니다.
 - ``label.bind("<Button-2>", change_color)``: 라벨의 위에서 마우스 가운데 클릭했을 때 ``change_color()`` 함수를 실행합니다.
 - ``label.bind("<Button-3>", lambda e: win.destroy()))``: 라벨을 오른쪽 클릭했을 때 윈도우를 종료합니다.
+
+<br/>
 
 - ``time()``: time() 함수를 실행합니다.
 - ``mainloop()``: 윈도우를 실행합니다.
